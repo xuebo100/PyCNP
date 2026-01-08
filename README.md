@@ -71,7 +71,7 @@ print(f"Best solution: {result.best_solution}")
 print(f"Objective value: {result.best_obj_value}")
 ```
 
-See the [quick tutorial](https://xuebo100.github.io/PyCNP/examples/quick_tutorial.html) for a more comprehensive introduction.
+See the [quick tutorial](/PyCNP/examples/quick_tutorial.html) for a more comprehensive introduction.
 
 ## Key Features
 
@@ -114,18 +114,16 @@ Key resources:
 - [Introduction to CNP](https://xuebo100.github.io/PyCNP/setup/introduction_to_cnp.html) - Learn about the Critical Node Problem
 - [Installation](https://xuebo100.github.io/PyCNP/setup/installation.html) - How to install PyCNP
 - [Core Concepts](https://xuebo100.github.io/PyCNP/setup/concepts.html) - Understand PyCNP's components
-- [Quick Tutorial](https://xuebo100.github.io/PyCNP/examples/quick_tutorial.html) - Step-by-step examples
-- [API Reference](https://xuebo100.github.io/PyCNP/api/pycnp.html) - Detailed API documentation
-- [FAQ](https://xuebo100.github.io/PyCNP/setup/faq.html) - Frequently asked questions
+- [Quick Tutorial](/PyCNP/examples/quick_tutorial.html) - Step-by-step examples
+- [API Reference](https://xuebo100.github.io/PyCNP/api/) - Detailed API documentation
 
 ## Getting Help
 
 If you have questions or need help:
 
-1. Check the [FAQ](https://xuebo100.github.io/PyCNP/setup/faq.html)
-2. Browse [discussions](https://github.com/xuebo100/PyCNP/discussions)
-3. Open a new [discussion thread](https://github.com/xuebo100/PyCNP/discussions/new) for questions
-4. Open a [bug report](https://github.com/xuebo100/PyCNP/issues/new?template=bug_report.yml) for issues
+1. Browse [discussions](https://github.com/xuebo100/PyCNP/discussions)
+2. Open a new [discussion thread](https://github.com/xuebo100/PyCNP/discussions/new) for questions
+3. Open a [bug report](https://github.com/xuebo100/PyCNP/issues/new?template=bug_report.yml) for issues
 
 When reporting bugs, please include:
 

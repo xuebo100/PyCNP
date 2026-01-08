@@ -71,7 +71,7 @@ print(f"Best solution: {result.best_solution}")
 print(f"Objective value: {result.best_obj_value}")
 ```
 
-See the [examples](/PyCNP/examples/example1.html) for a more comprehensive introduction.
+See the [examples](https://xuebo100.github.io/PyCNP/examples/) for a more comprehensive introduction.
 
 ## Key Features
 

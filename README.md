@@ -114,7 +114,7 @@ Key resources:
 - [Introduction to CNP](https://xuebo100.github.io/PyCNP/setup/introduction_to_cnp.html) - Learn about the Critical Node Problem
 - [Installation](https://xuebo100.github.io/PyCNP/setup/installation.html) - How to install PyCNP
 - [Core Concepts](https://xuebo100.github.io/PyCNP/setup/concepts.html) - Understand PyCNP's components
-- [Examples](/PyCNP/examples/example1.html) - Step-by-step examples
+- [Examples](https://xuebo100.github.io/PyCNP/examples/) - Step-by-step examples
 - [API Reference](https://xuebo100.github.io/PyCNP/api/) - Detailed API documentation
 
 ## Getting Help

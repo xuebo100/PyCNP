@@ -77,9 +77,7 @@ Contents
    :maxdepth: 1
    :caption: Examples
 
-   examples/example1
-   examples/example2
-   examples/example3
+   examples/index
 
 .. toctree::
    :maxdepth: 1

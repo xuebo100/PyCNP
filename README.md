@@ -71,7 +71,7 @@ print(f"Best solution: {result.best_solution}")
 print(f"Objective value: {result.best_obj_value}")
 ```
 
-See the [quick tutorial](/PyCNP/examples/quick_tutorial.html) for a more comprehensive introduction.
+See the [examples](/PyCNP/examples/example1.html) for a more comprehensive introduction.
 
 ## Key Features
 
@@ -114,7 +114,7 @@ Key resources:
 - [Introduction to CNP](https://xuebo100.github.io/PyCNP/setup/introduction_to_cnp.html) - Learn about the Critical Node Problem
 - [Installation](https://xuebo100.github.io/PyCNP/setup/installation.html) - How to install PyCNP
 - [Core Concepts](https://xuebo100.github.io/PyCNP/setup/concepts.html) - Understand PyCNP's components
-- [Quick Tutorial](/PyCNP/examples/quick_tutorial.html) - Step-by-step examples
+- [Examples](/PyCNP/examples/example1.html) - Step-by-step examples
 - [API Reference](https://xuebo100.github.io/PyCNP/api/) - Detailed API documentation
 
 ## Getting Help

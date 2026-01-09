@@ -10,7 +10,7 @@ C++ implementation through the :class:`ProblemData` class.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, List, Optional, Set
+from typing import TYPE_CHECKING
 
 from .MemeticSearch import (
     MemeticSearch,
@@ -71,9 +71,9 @@ class Model:
         Creates a new Model instance with no nodes or edges. Use :meth:`add_node`
         and :meth:`add_edge` to populate the model.
         """
-        self.nodes: Set[int] = set()
-        self.adj_list: List[Set[int]] = []
-        self._problem_data: Optional[ProblemData] = None
+        self.nodes: set[int] = set()
+        self.adj_list: list[set[int]] = []
+        self._problem_data: ProblemData | None = None
 
     def add_node(self, node: int) -> None:
         """
@@ -164,20 +164,6 @@ class Model:
             self._problem_data = self._create_problem_data()
         return self._problem_data
 
-    def getProblemData(self) -> "ProblemData":
-        """
-        Get the ProblemData object for visualization.
-
-        .. deprecated::
-            Use the :attr:`problem_data` property instead.
-
-        Returns
-        -------
-        ProblemData
-            The ProblemData object representing the graph.
-        """
-        return self.problem_data
-
     def _create_problem_data(self) -> "ProblemData":
         """
         Create a ProblemData object from the model's internal representation.
@@ -210,8 +196,8 @@ class Model:
         budget: int,
         stopping_criterion: StoppingCriterion,
         seed: int = 0,
-        memetic_search_params: Optional[MemeticSearchParams] = None,
-        variable_population_params: Optional[VariablePopulationParams] = None,
+        memetic_search_params: MemeticSearchParams | None = None,
+        variable_population_params: VariablePopulationParams | None = None,
         hop_distance: int = DEFAULT_HOP_DISTANCE,
         display_interval: float = DEFAULT_DISPLAY_INTERVAL,
         display: bool = True,
@@ -234,8 +220,7 @@ class Model:
         stopping_criterion : StoppingCriterion
             The criterion used to determine when to stop the search.
             Common options include :class:`MaxIterations`,
-            :class:`MaxRuntime`, :class:`NoImprovement`,
-            or :class:`OptimalValue`.
+            :class:`MaxRuntime`, or :class:`NoImprovement`.
         seed : int, default=0
             Random seed for reproducibility. The same seed will produce the
             same results when all other parameters are identical.

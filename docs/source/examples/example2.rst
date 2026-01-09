@@ -134,7 +134,7 @@ PyCNP provides an interactive graph visualization using the ``pyvis`` library. T
 
    # 7. Visualize the result
    visualize_graph(
-       problem_data=model.getProblemData(),
+       problem_data=model.problem_data,
        critical_nodes_set=result.best_solution,
    )
 

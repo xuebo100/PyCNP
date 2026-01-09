@@ -82,27 +82,26 @@ See the [examples](https://xuebo100.github.io/PyCNP/examples/) for a more compre
 
 ### Search Strategies
 
-| Strategy | Description                                         | Best For                          |
-| -------- | --------------------------------------------------- | --------------------------------- |
-| CBNS     | Component-Based Neighborhood Search                 | General CNP instances             |
-| CHNS     | Component-Based Hybrid Neighborhood Search          | Balance of quality and speed      |
-| DLAS     | Diversified Late Acceptance Search                  | When diversification is important |
-| BCLS     | Betweenness Centrality-based Late Acceptance Search | DCNP problems                     |
+| Strategy | Description                                          | Best For                           |
+|----------|------------------------------------------------------|------------------------------------|
+| CBNS     | Component-Based Neighborhood Search                  | General CNP instances              |
+| CHNS     | Component-Based Hybrid Neighborhood Search           | Balance of quality and speed       |
+| DLAS     | Diversified Late Acceptance Search                   | When diversification is important  |
+| BCLS     | Betweenness Centrality-based Late Acceptance Search  | DCNP problems                      |
 
 ### Crossover Operators or Problem Reduction
 
-| Operator | Parents | Description                                                              |
-| -------- | ------- | ------------------------------------------------------------------------ |
-| DBX      | 2       | Double Backbone Based Crossover - preserves common nodes between parents |
-| IRR      | 3       | Inherit-Repair-Recombination - designed for DCNP                         |
-| RSC      | 2       | Reduce-Solve-Combine - can be used for both CNP and DCNP                |
+| Operator | Parents | Description                                                               |
+|----------|---------|---------------------------------------------------------------------------|
+| DBX      | 2       | Double Backbone Based Crossover - preserves common nodes between parents  |
+| IRR      | 3       | Inherit-Repair-Recombination - designed for DCNP                          |
+| RSC      | 2       | Reduce-Solve-Combine - can be used for both CNP and DCNP                  |
 
 ### Stopping Criteria
 
 - `MaxIterations` - Stop after a fixed number of iterations
 - `MaxRuntime` - Stop after a specified amount of time (seconds)
 - `NoImprovement` - Stop if no improving solution is found
-- `OptimalValue` - Stop when a target objective value is reached
 
 ## Documentation
 

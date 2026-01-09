@@ -12,6 +12,8 @@ These criteria can be used to control the termination of optimization or
 search algorithms.
 """
 
+from __future__ import annotations
+
 from .MaxIterations import MaxIterations
 from .MaxRuntime import MaxRuntime
 from .NoImprovement import NoImprovement

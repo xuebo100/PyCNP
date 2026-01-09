@@ -20,8 +20,7 @@ from __future__ import annotations
 
 import logging
 import time
-from dataclasses import dataclass, field
-from typing import List
+from dataclasses import dataclass
 
 from .constants import PACKAGE_LOGGER_NAME
 
@@ -51,6 +50,13 @@ class Statistics:
     objective value, population size, and idle generation counts for each
     iteration of the memetic algorithm.
 
+    Attributes
+    ----------
+    data : List[_IterationStats]
+        List of iteration statistics collected during the search.
+    num_iterations : int
+        Total number of iterations recorded.
+
     Examples
     --------
     >>> from pycnp import Statistics
@@ -62,9 +68,6 @@ class Statistics:
     Iterations: 2
     """
 
-    data: List[_IterationStats] = field(default_factory=list)
-    num_iterations: int = 0
-
     def __init__(self, collect_stats: bool = True):
         """
         Parameters
@@ -74,7 +77,7 @@ class Statistics:
         """
         self._collect_stats = collect_stats
         self._clock = time.perf_counter()
-        self.data = []
+        self.data: list[_IterationStats] = []
         self.num_iterations = 0
 
     def is_collecting(self) -> bool:

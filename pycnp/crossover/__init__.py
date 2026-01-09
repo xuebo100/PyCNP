@@ -11,6 +11,8 @@ Each crossover operator can be imported directly from this module or from
 their respective submodules.
 """
 
+from __future__ import annotations
+
 # Import C++ bindings submodule for documentation purposes
 from . import _crossover
 from .double_backbone_based_crossover import (

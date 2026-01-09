@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from typing import Protocol, runtime_checkable
 
 
@@ -6,6 +8,19 @@ class StoppingCriterion(Protocol):  # pragma: no cover
     """
     Protocol for algorithm stopping criteria.
 
+    This protocol defines the interface that all stopping criteria must implement.
+    Stopping criteria are used to determine when an optimization algorithm should
+    terminate its search.
+
+    Implementations should be callable and return True when the stopping condition
+    is met.
+
+    Examples
+    --------
+    >>> from pycnp import MaxRuntime
+    >>> criterion = MaxRuntime(60)  # Stop after 60 seconds
+    >>> criterion(100.5)  # Check if should stop
+    False
     """
 
     def __call__(self, best_obj_value: float) -> bool:

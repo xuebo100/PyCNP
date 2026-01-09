@@ -62,12 +62,12 @@ def test_from_data_structure():
     model = Model()
     model.add_edge(0, 1)
 
-    # Create ProblemData
-    data = model._create_problem_data()
+    # Create ProblemData using the public property
+    data = model.problem_data
     assert isinstance(data, ProblemData)
 
     # Create new model from data
     new_model = Model.from_data(data)
 
     # The new model should hold the reference
-    assert new_model._problem_data is data
+    assert new_model.problem_data is data

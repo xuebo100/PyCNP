@@ -435,3 +435,23 @@ class SearchResult:
     def solution(self) -> set:
         """Found solution, represented as a set of nodes."""
         ...
+
+class SearchStrategy:
+    """Base class for search strategies."""
+    ...
+
+class CBNSStrategy(SearchStrategy):
+    """Component-Based Neighborhood Search strategy."""
+    ...
+
+class CHNSStrategy(SearchStrategy):
+    """Component-Based Hybrid Neighborhood Search strategy."""
+    ...
+
+class DLASStrategy(SearchStrategy):
+    """Diversified Late Acceptance Search strategy."""
+    ...
+
+class BCLSStrategy(SearchStrategy):
+    """Betweenness Centrality-based Late Acceptance Search strategy."""
+    ...

@@ -1,6 +1,9 @@
-from typing import Literal
+from __future__ import annotations
 
-from pycnp._pycnp import Graph
+from typing import TYPE_CHECKING, Literal
+
+if TYPE_CHECKING:
+    from pycnp._pycnp import Graph
 
 # Crossover constant
 RSC = "RSC"

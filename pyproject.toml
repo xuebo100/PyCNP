@@ -1,7 +1,7 @@
 [project]
 name = "pycnp"
-version = "0.1.1.dev0"
-description = "高性能关键节点问题求解器的Python绑定"
+version = "0.1.1"
+description = "A high-performance Python solver for Critical Node Problems"
 authors = [
     { name = "Bo Xue", email = "x3219658574@126.com" },
 ]
@@ -42,6 +42,33 @@ documentation = "https://xuebo100.github.io/PyCNP"
 source = "https://github.com/xuebo100/PyCNP"
 issues = "https://github.com/xuebo100/PyCNP/issues"
 
+[project.optional-dependencies]
+dev = [
+    "pre-commit>=3.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-xdist>=3.6.1",
+    "pytest-sugar>=1.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+docs = [
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+    "sphinx-immaterial>=0.11.0",
+    "myst-parser>=2.0.0",
+    "sphinx-autobuild>=2021.3.14",
+    "numpydoc>=1.5.0",
+    "nbsphinx>=0.9.0",
+]
+examples = [
+    "psutil>=5.8.0",
+    "matplotlib>=3.5.0",
+]
+visualization = [
+    "pyvis>=0.3.0",
+]
+
 [dependency-groups]
 build = [
     "meson>=1.0.0",
@@ -75,6 +102,10 @@ docs = [
 examples = [
     "psutil>=5.8.0",
     "matplotlib>=3.5.0",
+]
+
+visualization = [
+    "pyvis>=0.3.0",
 ]
 
 

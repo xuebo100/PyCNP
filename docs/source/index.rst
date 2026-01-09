@@ -71,7 +71,6 @@ Contents
    setup/introduction_to_ma
    setup/concepts
    setup/installation
-   setup/getting_help
 
 .. toctree::
    :maxdepth: 1

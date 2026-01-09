@@ -124,6 +124,9 @@ class VariablePopulationParams:
             Maximum number of consecutive generations without improvement
             before triggering population update or expansion.
         """
+        self.max_pop_size = max_pop_size
+        self.increase_pop_size = increase_pop_size
+        self.max_idle_gens = max_idle_gens
 
     max_pop_size: int = 20
     increase_pop_size: int = 3

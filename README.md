@@ -1,4 +1,5 @@
-# PyCNP - Python Critical Node Problem Solver
+# PyCNP: An Open-Source Python Package for
+Critical Node Detection Problems
 
 [![PyPI version](https://img.shields.io/pypi/v/pycnp?style=flat-square&label=PyPI)](https://pypi.org/project/pycnp/)
 [![CI](https://img.shields.io/github/actions/workflow/status/xuebo100/PyCNP/.github%2Fworkflows%2FCI.yml?branch=main&style=flat-square&logo=github&label=CI)](https://github.com/xuebo100/PyCNP/actions/workflows/CI.yml)
@@ -143,7 +144,10 @@ Before starting, please discuss changes in a GitHub issue first.
 If you use PyCNP in your research, please cite the relevant papers:
 
 ```bibtex
-@article{
+@article{pycnp2026,
+  title={PyCNP: An Open-Source Python Package for Critical Node Detection Problems},
+  author={Yangming Zhou and Bo Xue and MengChu Zhou and Tieju Ma},
+  year={2026},
 }
 ```
 

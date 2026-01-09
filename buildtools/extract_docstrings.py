@@ -58,7 +58,13 @@ _OP2DUNDER = {
 # Most symbols now have proper Doxygen comments in their header files.
 FALLBACK_SYMBOLS = {
     # Population::initialize (still inline - docblock cannot parse)
-    "Population::initialize": "initialize\n\nInitializes the population with diverse solutions.\n\nGenerates initial solutions using local search with random starting points.\n\nReturns\n-------\nTuple[Solution, int]\n    Pair of (best initial solution, its objective value)",
+    "Population::initialize": (
+        "initialize\n\nInitializes the population with diverse solutions.\n\n"
+        "Generates initial solutions using local search with random "
+        "starting points.\n\n"
+        "Returns\n-------\nTuple[Solution, int]\n"
+        "Pair of (best initial solution, its objective value)"
+    ),
 }
 
 

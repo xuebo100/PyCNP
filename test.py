@@ -1,8 +1,8 @@
 #第一个实例
 from pycnp import Model
 from pycnp.MemeticSearch import MemeticSearchParams, VariablePopulationParams
-from pycnp.visualization import visualize_graph
 from pycnp.stop import NoImprovement
+from pycnp.visualization import visualize_graph
 
 # Method 1: Use the modeling interface to construct a graph instance
 model = Model()

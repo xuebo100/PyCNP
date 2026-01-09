@@ -8,18 +8,18 @@ from .MemeticSearch import MemeticSearch, MemeticSearchParams, VariablePopulatio
 from .Model import Model
 from .Result import Result
 from ._pycnp import (  # noqa: F401
+    BCLSStrategy,
+    CBNSStrategy,
+    CHNSStrategy,
+    CNP_Graph,
+    DCNP_Graph,
+    DLASStrategy,
+    Graph,
+    Population,
     ProblemData,
     Search,
     SearchResult,
-    Population,
-    Graph,
-    CNP_Graph,
-    DCNP_Graph,
     SearchStrategy,
-    CBNSStrategy,
-    CHNSStrategy,
-    DLASStrategy,
-    BCLSStrategy,
 )
 from .constants import (
     BCLS,
@@ -50,9 +50,7 @@ from .exceptions import (
     InvalidProblemTypeError,
     InvalidSearchStrategyError,
 )
-from .read import read
-from .read import read_adjacency_list_format
-from .read import read_edge_list_format
+from .read import read, read_adjacency_list_format, read_edge_list_format
 from .stop import (
     MaxIterations,
     MaxRuntime,
@@ -94,6 +92,13 @@ __all__ = [
     "SEARCH_STRATEGY_CBNS",
     "SEARCH_STRATEGY_CHNS",
     "SEARCH_STRATEGY_DLAS",
+    "BCLSStrategy",
+    "CBNSStrategy",
+    "CHNSStrategy",
+    "CNP_Graph",
+    "DCNP_Graph",
+    "DLASStrategy",
+    "Graph",
     # Exceptions
     "InvalidProblemTypeError",
     "InvalidSearchStrategyError",
@@ -105,19 +110,12 @@ __all__ = [
     # Model class
     "Model",
     "NoImprovement",
+    "Population",
     # C++ binding classes
     "ProblemData",
-    "Population",
-    "Graph",
-    "CNP_Graph",
-    "DCNP_Graph",
-    "SearchStrategy",
-    "CBNSStrategy",
-    "CHNSStrategy",
-    "DLASStrategy",
-    "BCLSStrategy",
     # Result class
     "Result",
+    "SearchStrategy",
     # Stopping criteria
     "StoppingCriterion",
     "VariablePopulationParams",

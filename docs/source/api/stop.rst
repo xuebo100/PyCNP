@@ -34,6 +34,3 @@ The :mod:`pycnp.stop` module provides stopping criteria for controlling when the
 
 .. autoclass:: pycnp.stop.NoImprovement
    :members:
-
-.. autoclass:: pycnp.stop.CombinedCriterion
-   :members:

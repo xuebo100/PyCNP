@@ -182,12 +182,6 @@ The solver requires a stopping criterion to terminate the search:
 
    :param max_no_improvement: Maximum iterations without improvement before stopping
 
-**CombinedCriterion**
-
-   Combines multiple stopping criteria with OR logic—stops when *any* of the criteria are satisfied.
-
-   :param criteria: List of stopping criteria to combine
-
 
 Memetic algorithm
 -----------------

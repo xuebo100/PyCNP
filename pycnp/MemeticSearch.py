@@ -182,7 +182,7 @@ class MemeticSearch:
         stopping_criterion : StoppingCriterion
             The criterion that determines when to stop the search.
             Common options: :class:`MaxIterations`, :class:`MaxRuntime`,
-            :class:`NoImprovement`, :class:`OptimalValue`, :class:`CombinedCriterion`.
+            :class:`NoImprovement`, or :class:`OptimalValue`.
         collect_stats : bool, default=True
             Whether to collect iteration-by-iteration statistics.
         display : bool, default=False

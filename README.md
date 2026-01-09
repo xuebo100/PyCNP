@@ -1,5 +1,4 @@
-# PyCNP: An Open-Source Python Package for
-Critical Node Detection Problems
+# PyCNP: An Open-Source Python Package for Critical Node Detection Problems
 
 [![PyPI version](https://img.shields.io/pypi/v/pycnp?style=flat-square&label=PyPI)](https://pypi.org/project/pycnp/)
 [![CI](https://img.shields.io/github/actions/workflow/status/xuebo100/PyCNP/.github%2Fworkflows%2FCI.yml?branch=main&style=flat-square&logo=github&label=CI)](https://github.com/xuebo100/PyCNP/actions/workflows/CI.yml)
@@ -104,7 +103,6 @@ See the [examples](https://xuebo100.github.io/PyCNP/examples/) for a more compre
 - `MaxRuntime` - Stop after a specified amount of time (seconds)
 - `NoImprovement` - Stop if no improving solution is found
 - `OptimalValue` - Stop when a target objective value is reached
-- `CombinedCriterion` - Combine multiple criteria with OR logic
 
 ## Documentation
 

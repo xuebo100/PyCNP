@@ -7,20 +7,17 @@ It includes common criteria such as:
 - ``MaxRuntime``: Stop after a certain amount of time has elapsed.
 - ``NoImprovement``: Stop when the solution has not improved for a given
   number of iterations.
-- ``CombinedCriterion``: Combine multiple criteria with OR logic.
 
 These criteria can be used to control the termination of optimization or
 search algorithms.
 """
 
-from .CombinedCriterion import CombinedCriterion
 from .MaxIterations import MaxIterations
 from .MaxRuntime import MaxRuntime
 from .NoImprovement import NoImprovement
 from .StoppingCriterion import StoppingCriterion
 
 __all__ = [
-    "CombinedCriterion",
     "MaxIterations",
     "MaxRuntime",
     "NoImprovement",

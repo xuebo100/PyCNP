@@ -235,7 +235,7 @@ class Model:
             The criterion used to determine when to stop the search.
             Common options include :class:`MaxIterations`,
             :class:`MaxRuntime`, :class:`NoImprovement`,
-            :class:`OptimalValue`, or :class:`CombinedCriterion`.
+            or :class:`OptimalValue`.
         seed : int, default=0
             Random seed for reproducibility. The same seed will produce the
             same results when all other parameters are identical.

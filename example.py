@@ -20,7 +20,7 @@ import time
 
 from pycnp import Model, read
 from pycnp.MemeticSearch import MemeticSearchParams
-from pycnp.stop import CombinedCriterion, MaxRuntime
+from pycnp.stop import MaxRuntime
 from pycnp.visualization import visualize_graph
 
 
@@ -129,10 +129,9 @@ def run_single_experiment(
         print("Parameter configuration done.")
 
         # Configure stopping criteria
-        stopping_conditions = [MaxRuntime(runtime)]
         print(f"Stopping criteria: run for {runtime} seconds")
 
-        stopping_criterion = CombinedCriterion(stopping_conditions)
+        stopping_criterion = MaxRuntime(runtime)
 
         # Start solving
         print("Starting solver...")

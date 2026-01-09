@@ -54,7 +54,6 @@ from .read import read
 from .read import read_adjacency_list_format
 from .read import read_edge_list_format
 from .stop import (
-    CombinedCriterion,
     MaxIterations,
     MaxRuntime,
     NoImprovement,
@@ -95,7 +94,6 @@ __all__ = [
     "SEARCH_STRATEGY_CBNS",
     "SEARCH_STRATEGY_CHNS",
     "SEARCH_STRATEGY_DLAS",
-    "CombinedCriterion",
     # Exceptions
     "InvalidProblemTypeError",
     "InvalidSearchStrategyError",

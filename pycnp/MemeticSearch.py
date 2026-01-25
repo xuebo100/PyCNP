@@ -19,11 +19,13 @@ from typing import TYPE_CHECKING, Optional, Union
 from pycnp.ProgressPrinter import ProgressPrinter
 from pycnp.Result import Result
 from pycnp.Statistics import Statistics
-from pycnp.crossover import (
+from pycnp.crossover.double_backbone_based_crossover import (
     double_backbone_based_crossover,
-    inherit_repair_recombination,
-    reduce_solve_combine,
 )
+from pycnp.crossover.inherit_repair_recombination import (
+    inherit_repair_recombination,
+)
+from pycnp.crossover.reduce_solve_combine import reduce_solve_combine
 from pycnp.params import MemeticSearchParams, VariablePopulationParams
 from pycnp.validation import (
     validate_crossover_strategy,

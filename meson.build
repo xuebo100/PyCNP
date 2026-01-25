@@ -2,8 +2,7 @@ project(
     'pycnp',
     'cpp',
     version: run_command(
-        'python', '-c',
-        'import re; print(re.search(r\'version\\s*=\\s*"([^"]+)\', open("pyproject.toml").read()).group(1))',
+        'python', meson.current_source_dir() / 'buildtools' / 'get_version.py',
         check: true,
     ).stdout().strip(),
     default_options: [

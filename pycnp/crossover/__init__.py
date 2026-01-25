@@ -13,6 +13,10 @@ their respective submodules.
 
 from __future__ import annotations
 
+# Import the main pycnp C++ module first to ensure shared pybind11 internals
+# are initialized before importing _crossover (required on Windows)
+import pycnp._pycnp  # noqa: F401
+
 # Import C++ bindings submodule for documentation purposes
 from . import _crossover
 from .double_backbone_based_crossover import (

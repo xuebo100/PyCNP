@@ -13,8 +13,10 @@ if not search_dir.exists():
     print("")
     sys.exit(0)
 
-# Use forward slashes for consistency (works on all platforms)
-headers = glob.glob(str(search_dir / "**" / "*.h"), recursive=True)
-# Convert to forward slashes for meson compatibility
-headers = [h.replace("\\", "/") for h in headers]
-print(" ".join(headers))
+try:
+    headers = glob.glob(str(search_dir / "**" / "*.h"), recursive=True)
+    headers = [Path(h).as_posix() for h in headers]
+    output = " ".join(headers)
+    sys.stdout.buffer.write(output.encode("utf-8", "surrogatepass"))
+except Exception:
+    sys.stdout.buffer.write(b"")

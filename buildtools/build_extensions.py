@@ -4,6 +4,7 @@ Builds the native extensions for PyCNP.
 
 import argparse
 import pathlib
+import shutil
 from subprocess import check_call
 
 
@@ -47,7 +48,8 @@ def parse_args():
 
 
 def clean(build_dir: pathlib.Path, install_dir: pathlib.Path):
-    check_call(["rm", "-rf", str(build_dir)])
+    if build_dir.exists():
+        shutil.rmtree(build_dir)
 
     for extension in install_dir.rglob("*.so"):
         extension.unlink()

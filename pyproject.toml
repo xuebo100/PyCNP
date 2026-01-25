@@ -169,7 +169,7 @@ exclude_lines = [
 [tool.cibuildwheel]
 # 我们不支持旧的Python版本和一些不常见的平台
 build = "cp39-* cp310-* cp311-* cp312-* cp313-*"
-skip = "pp* *_ppc64le *_i686 *_s390x *-win32 *-musllinux*"
+skip = "pp3*-* *_ppc64le *_i686 *_s390x *-win32 *-musllinux*"
 build-frontend = "build"
 test-requires = [
     "pytest>=7.0.0",
@@ -177,7 +177,10 @@ test-requires = [
     "pytest-xdist>=3.6.1",
     "pytest-sugar>=1.0.0",
 ]
-test-command = "pytest {package}/tests"
+test-command = "pytest {project}/tests"
+
+[tool.cibuildwheel.windows]
+test-command = 'python -c "import pycnp; import pycnp._pycnp; import pycnp.crossover._crossover"'
 
 
 [tool.poetry]

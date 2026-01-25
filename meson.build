@@ -9,13 +9,22 @@ project(
         'cpp_std=c++20',
         'optimization=3',
         'b_ndebug=if-release',  # disables asserts in release builds
-        'b_lto=true',  # enables -flto
-        'werror=true',  # promotes warnings to errors
         'warning_level=3',  # sets -Wextra and -Wpedantic
     ]
 )
 
 compiler = meson.get_compiler('cpp')
+
+# Enable LTO only on non-Windows platforms (causes DLL loading issues on Windows)
+if host_machine.system() != 'windows'
+    add_project_arguments('-flto', language: 'cpp')
+    add_project_link_arguments('-flto', language: 'cpp')
+endif
+
+# Enable werror only on non-Windows platforms
+if host_machine.system() != 'windows'
+    add_project_arguments('-Werror', language: 'cpp')
+endif
 # if compiler.has_argument('-Wno-dangling-reference')
 #     # This is a new diagnostic in GCC 13 and up, but it is a bit buggy right
 #     # now and issues false positives for some of our code.

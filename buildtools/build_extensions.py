@@ -5,6 +5,7 @@ Builds the native extensions for PyCNP.
 import argparse
 import pathlib
 import shutil
+import sys
 from subprocess import check_call
 
 
@@ -64,6 +65,7 @@ def configure(
     *additional: list[str],
 ):
     cwd = pathlib.Path.cwd()
+    is_windows = sys.platform.startswith("win")
     # fmt: off
     args = [
         build_dir,
@@ -71,6 +73,7 @@ def configure(
         f"-Dpython.platlibdir={cwd.absolute()}",
         f"-Dstrip={'true' if build_type == 'release' else 'false'}",
         f"-Db_coverage={'true' if build_type != 'release' else 'false'}",
+        *(("-Db_vscrt=mt",) if is_windows else ()),
         *additional,
     ]
     # fmt: on

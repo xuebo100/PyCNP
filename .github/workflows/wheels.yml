@@ -12,6 +12,10 @@ jobs:
   build_wheels:
     name: Build wheels (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    env:
+      CIBW_BEFORE_BUILD_WINDOWS: "pip install delvewheel"
+      CIBW_REPAIR_WHEEL_COMMAND_WINDOWS: "delvewheel repair -w {dest_dir} {wheel}"
+      CIBW_TEST_COMMAND_WINDOWS: "python -c \"import pycnp; import pycnp._pycnp; import pycnp.crossover._crossover\""
     strategy:
       fail-fast: false
       matrix:

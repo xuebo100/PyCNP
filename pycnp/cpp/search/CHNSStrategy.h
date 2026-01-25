@@ -65,7 +65,7 @@ private:
      * numSteps
      *     Current step count.
      */
-    void performMove(Graph &currentGraph, int &currentObjValue, int numSteps);
+    void performMove(Graph &currentGraph, int &currentObjValue, long numSteps);
 };
 
 #endif  // CHNS_STRATEGY_H

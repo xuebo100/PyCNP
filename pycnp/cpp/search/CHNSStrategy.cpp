@@ -50,7 +50,7 @@ SearchResult CHNSStrategy::execute()
 
 void CHNSStrategy::performMove(Graph &currentGraph,
                                int &currentObjValue,
-                               int numSteps)
+                               long numSteps)
 {
 
     Node nodeToRemove;

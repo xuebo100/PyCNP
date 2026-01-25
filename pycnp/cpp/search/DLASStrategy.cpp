@@ -65,7 +65,7 @@ void DLASStrategy::performMove(Graph &currentGraph,
                                std::vector<int> &historyCost,
                                int &maxCost,
                                int &numMaxCost,
-                               int numSteps)
+                               long numSteps)
 {
 
     // Save a copy of the current removed nodes to allow rollback if needed

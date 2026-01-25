@@ -76,7 +76,7 @@ private:
                      std::vector<int> &historyCost,
                      int &maxCost,
                      int &numMaxCost,
-                     int numSteps);
+                     long numSteps);
 };
 
 #endif  // DLAS_STRATEGY_H

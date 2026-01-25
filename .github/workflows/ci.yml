@@ -123,6 +123,12 @@ jobs:
         run: |
           python -m build --wheel --outdir dist
 
+      - name: Debug wheel contents
+        shell: bash
+        run: |
+          echo "=== Wheel contents ==="
+          python -m zipfile -l dist/*.whl | grep -E "\.pyd|\.so|crossover"
+
       - name: Test wheel
         shell: bash
         run: |

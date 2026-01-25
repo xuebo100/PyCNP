@@ -1,8 +1,8 @@
 # PyCNP: An Open-Source Python Package for Critical Node Detection Problems
 
 [![PyPI version](https://img.shields.io/pypi/v/pycnp?style=flat-square&label=PyPI)](https://pypi.org/project/pycnp/)
-[![CI](https://img.shields.io/github/actions/workflow/status/xuebo100/PyCNP/.github%2Fworkflows%2Fci.yml?branch=main&style=flat-square&logo=github&label=CI)](https://github.com/xuebo100/PyCNP/actions/workflows/ci.yml)
-[![Documentation](https://img.shields.io/github/actions/workflow/status/xuebo100/PyCNP/.github%2Fworkflows%2FDOC.yml?branch=main&style=flat-square&logo=github&label=DOC)](https://xuebo100.github.io/PyCNP/)
+[![CI](https://img.shields.io/github/actions/workflow/status/xuebo100/PyCNP/ci.yml?branch=main&style=flat-square&logo=github&label=CI)](https://github.com/xuebo100/PyCNP/actions/workflows/ci.yml)
+[![Documentation](https://img.shields.io/github/actions/workflow/status/xuebo100/PyCNP/DOC.yml?branch=main&style=flat-square&logo=github&label=DOC)](https://xuebo100.github.io/PyCNP/)
 
 PyCNP is an open-source, high-performance Python solver for the Critical Node Problem (CNP) and Distance-based Critical Node Problem (DCNP).
 

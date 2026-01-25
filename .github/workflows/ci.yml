@@ -123,9 +123,18 @@ jobs:
         run: |
           python -m build --wheel --outdir dist
 
+      - name: Debug wheel contents
+        shell: bash
+        run: |
+          echo "=== Wheel contents ==="
+          python -m zipfile -l dist/*.whl
+          echo "=== Site-packages after install ==="
+
       - name: Test wheel
         shell: bash
         run: |
           pip install dist/*.whl
+          # List installed files
+          pip show -f pycnp | head -50
           # Test in a different directory to avoid importing from source
           cd /tmp && python -c "import pycnp; print(pycnp.__version__)"

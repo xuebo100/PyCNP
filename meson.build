@@ -99,10 +99,14 @@ foreach extension : extensions
 
     message('Going to build extension module ' + subdir / name + '.')
 
-    # 动态搜索头文件（包含所有子目录）
-    doc_search_dir = SRC_DIR / subdir
-    doc_glob = 'import glob; print(*glob.glob("' + doc_search_dir + '/**/*.h", recursive=True))'
-    doc_cmd = run_command('python', '-c', doc_glob, check: true)
+    # 动态搜索头文件（包含所有子目录）- 使用脚本确保跨平台兼容
+    doc_search_dir = meson.current_source_dir() / SRC_DIR / subdir
+    doc_cmd = run_command(
+        'python',
+        meson.current_source_dir() / 'buildtools' / 'find_headers.py',
+        doc_search_dir,
+        check: true
+    )
     doc_input_headers = files(doc_cmd.stdout().strip().split())
     pybind_src = SRC_DIR / subdir / 'pybind.cpp'
     if subdir == ''

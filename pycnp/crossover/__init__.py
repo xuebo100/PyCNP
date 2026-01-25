@@ -13,24 +13,23 @@ their respective submodules.
 
 from __future__ import annotations
 
-# Import the main pycnp C++ module first to ensure shared pybind11 internals
-# are initialized before importing _crossover (required on Windows)
+import importlib
+from typing import Any
+
 import pycnp._pycnp  # noqa: F401
 
-# Import C++ bindings submodule for documentation purposes
-from . import _crossover
+from .double_backbone_based_crossover import DBX
 from .double_backbone_based_crossover import (
-    DBX,
-    double_backbone_based_crossover,
+    double_backbone_based_crossover as double_backbone_based_crossover,
 )
+from .inherit_repair_recombination import IRR
 from .inherit_repair_recombination import (
-    IRR,
-    inherit_repair_recombination,
+    inherit_repair_recombination as inherit_repair_recombination,
 )
-from .reduce_solve_combine import (
-    RSC,
-    reduce_solve_combine,
-)
+from .reduce_solve_combine import RSC
+from .reduce_solve_combine import reduce_solve_combine as reduce_solve_combine
+
+_crossover: Any = importlib.import_module("pycnp.crossover._crossover")
 
 __all__ = [
     "DBX",

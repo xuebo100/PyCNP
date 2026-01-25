@@ -127,4 +127,5 @@ jobs:
         shell: bash
         run: |
           pip install dist/*.whl
-          python -c "import pycnp; print(pycnp.__version__)"
+          # Test in a different directory to avoid importing from source
+          cd /tmp && python -c "import pycnp; print(pycnp.__version__)"

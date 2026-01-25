@@ -5,7 +5,7 @@
 #include <vector>
 
 using Node = int;
-using Age = int;
+using Age = long;
 using NodeSet = std::unordered_set<Node>;
 using ComponentIndex = int;
 using Solution = NodeSet;

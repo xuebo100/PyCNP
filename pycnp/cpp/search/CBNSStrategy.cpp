@@ -50,7 +50,7 @@ SearchResult CBNSStrategy::execute()
 
 void CBNSStrategy::performMove(Graph &currentGraph,
                                int &currentObjValue,
-                               int numSteps)
+                               long numSteps)
 {
 
     ComponentIndex componentToRemove = currentGraph.selectRemovedComponent();

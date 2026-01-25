@@ -87,7 +87,7 @@ jobs:
 
       - name: Install package with dev dependencies
         run: |
-          pip install -v -e ".[dev,examples]"
+          pip install -e ".[dev,examples]"
 
       - name: Run tests with coverage
         run: |
@@ -126,6 +126,7 @@ jobs:
           python -m build --wheel --outdir dist
 
       - name: Test wheel
+        shell: bash
         run: |
           pip install dist/*.whl
           python -c "import pycnp; print(pycnp.__version__)"

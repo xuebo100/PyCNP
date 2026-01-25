@@ -2,12 +2,10 @@ project(
     'pycnp',
     'cpp',
     version: run_command(
-        'awk',
-        # Matches first line with 'version = "XXX"', and extracts "XXX".
-        '/version/ { print $3; exit }',
-        'pyproject.toml',
+        'python', '-c',
+        'import re; print(re.search(r\'version\\s*=\\s*"([^"]+)\', open("pyproject.toml").read()).group(1))',
         check: true,
-    ).stdout().replace('"', ''),  # turns "XXX" into just XXX
+    ).stdout().strip(),
     default_options: [
         'cpp_std=c++20',
         'optimization=3',

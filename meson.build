@@ -13,7 +13,7 @@ project(
         'optimization=3',
         'b_ndebug=if-release',  # disables asserts in release builds
         'b_lto=true',  # enables -flto
-        'werror=false',  # promotes warnings to errors
+        'werror=true',  # promotes warnings to errors
         'warning_level=3',  # sets -Wextra and -Wpedantic
     ]
 )

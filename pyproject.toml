@@ -180,6 +180,8 @@ test-requires = [
 test-command = "pytest {project}/tests"
 
 [tool.cibuildwheel.windows]
+before-build = "pip install delvewheel"
+repair-wheel-command = "delvewheel repair -w {dest_dir} {wheel}"
 test-command = 'python -c "import pycnp; import pycnp._pycnp; import pycnp.crossover._crossover"'
 
 

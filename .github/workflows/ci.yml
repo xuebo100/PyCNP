@@ -93,13 +93,15 @@ jobs:
         run: |
           python -m pip install --upgrade build delvewheel
           python -m build --wheel --outdir dist
-          delvewheel repair -w dist dist\*.whl
+          $wheels = (Get-ChildItem dist\*.whl).FullName
+          delvewheel repair -w dist $wheels
 
       - name: Install wheel (Windows)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          pip install dist\*.whl
+          $wheels = (Get-ChildItem dist\*.whl).FullName
+          pip install $wheels
 
       - name: Run tests with coverage (Windows)
         if: runner.os == 'Windows'
@@ -153,7 +155,8 @@ jobs:
           python -m pip install delvewheel
           if (Test-Path repaired) { Remove-Item -Recurse -Force repaired }
           New-Item -ItemType Directory -Path repaired | Out-Null
-          delvewheel repair -w repaired dist\*.whl
+          $wheels = (Get-ChildItem dist\*.whl).FullName
+          delvewheel repair -w repaired $wheels
           Remove-Item dist\*.whl
           Move-Item repaired\*.whl dist\
 
@@ -168,7 +171,7 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          python -m zipfile -l dist\*.whl | Select-String -Pattern "\.pyd|\.so|crossover"
+          Get-ChildItem dist\*.whl | ForEach-Object { python -m zipfile -l $_.FullName } | Select-String -Pattern "\.pyd|\.so|crossover"
 
       - name: Test wheel (non-Windows)
         if: runner.os != 'Windows'
@@ -182,6 +185,7 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          pip install dist\*.whl
+          $wheels = (Get-ChildItem dist\*.whl).FullName
+          pip install $wheels
           Set-Location $env:TEMP
           python -c "import pycnp; print(pycnp.__version__)"

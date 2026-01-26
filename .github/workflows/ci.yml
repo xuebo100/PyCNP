@@ -148,23 +148,40 @@ jobs:
 
       - name: Repair wheel (Windows)
         if: runner.os == 'Windows'
-        shell: bash
+        shell: pwsh
         run: |
           python -m pip install delvewheel
-          mkdir -p repaired
-          delvewheel repair -w repaired dist/*.whl
-          rm -f dist/*.whl
-          mv repaired/*.whl dist/
+          if (Test-Path repaired) { Remove-Item -Recurse -Force repaired }
+          New-Item -ItemType Directory -Path repaired | Out-Null
+          delvewheel repair -w repaired dist\*.whl
+          Remove-Item dist\*.whl
+          Move-Item repaired\*.whl dist\
 
-      - name: Debug wheel contents
+      - name: Debug wheel contents (non-Windows)
+        if: runner.os != 'Windows'
         shell: bash
         run: |
           echo "=== Wheel contents ==="
           python -m zipfile -l dist/*.whl | grep -E "\.pyd|\.so|crossover"
 
-      - name: Test wheel
+      - name: Debug wheel contents (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          python -m zipfile -l dist\*.whl | Select-String -Pattern "\.pyd|\.so|crossover"
+
+      - name: Test wheel (non-Windows)
+        if: runner.os != 'Windows'
         shell: bash
         run: |
           pip install dist/*.whl
           # Test in a different directory to avoid importing from source
           cd /tmp && python -c "import pycnp; print(pycnp.__version__)"
+
+      - name: Test wheel (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          pip install dist\*.whl
+          Set-Location $env:TEMP
+          python -c "import pycnp; print(pycnp.__version__)"

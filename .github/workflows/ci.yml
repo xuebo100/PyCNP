@@ -83,10 +83,33 @@ jobs:
           pip install -e ".[dev,examples]"
 
       - name: Build native extensions
+        if: runner.os != 'Windows'
         run: |
           python buildtools/build_wrapper.py
 
+      - name: Build & repair wheel (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade build delvewheel
+          python -m build --wheel --outdir dist
+          delvewheel repair -w dist dist\*.whl
+
+      - name: Install wheel (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          pip install dist\*.whl
+
+      - name: Run tests with coverage (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Set-Location $env:TEMP
+          python -m pytest "$env:GITHUB_WORKSPACE\tests" --cov --cov-report=xml:"$env:GITHUB_WORKSPACE\coverage.xml" --cov-report=term --numprocesses=auto -v
+
       - name: Run tests with coverage
+        if: runner.os != 'Windows'
         run: |
           pytest --cov --cov-report=xml --cov-report=term --numprocesses=auto -v
 

@@ -14,7 +14,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       CIBW_BEFORE_BUILD_WINDOWS: "pip install delvewheel"
-      CIBW_REPAIR_WHEEL_COMMAND_WINDOWS: "delvewheel repair -w {dest_dir} {wheel} --add-path C:/hostedtoolcache/windows/Python/*/x64/Scripts;C:/hostedtoolcache/windows/Python/*/x64/Lib/site-packages"
+      CIBW_REPAIR_WHEEL_COMMAND_WINDOWS: "delvewheel repair -w {dest_dir} {wheel}"
       CIBW_TEST_COMMAND: "pytest {project}/tests"
     strategy:
       fail-fast: false

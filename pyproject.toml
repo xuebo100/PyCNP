@@ -1,6 +1,6 @@
 [project]
 name = "pycnp"
-version = "0.1.3"
+version = "0.1.4"
 description = "A high-performance Python solver for Critical Node Problems"
 authors = [
     { name = "Bo Xue", email = "x3219658574@126.com" },

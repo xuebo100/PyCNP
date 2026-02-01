@@ -38,7 +38,7 @@ dependencies = [
 
 [project.urls]
 homepage = "https://github.com/xuebo100/PyCNP"
-documentation = "https://xuebo100.github.io/PyCNP"
+documentation = "https://pycnp.readthedocs.io"
 source = "https://github.com/xuebo100/PyCNP"
 issues = "https://github.com/xuebo100/PyCNP/issues"
 
